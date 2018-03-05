@@ -18494,7 +18494,7 @@ var Calculator = function (_React$Component) {
             totalSelf: 0,
             totalCurrentSpot: 0,
             fpReward: 0,
-            ARCBoost: 88,
+            ARCBoost: 88.5,
             output_totalToLock: 0,
             output_totalFPRewards: 0,
             output_totalProfit: 0
