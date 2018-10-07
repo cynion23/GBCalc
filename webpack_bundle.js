@@ -18522,8 +18522,9 @@ var Calculator = function (_React$Component) {
     }, {
         key: 'onFormSubmitted',
         value: function onFormSubmitted(event) {
+            debugger;
             event.preventDefault();
-            onClick();
+            this.onClick();
         }
     }, {
         key: 'render',
@@ -18541,7 +18542,7 @@ var Calculator = function (_React$Component) {
                         { lg: 6, lgOffset: 3, style: { textAlign: "center" } },
                         _react2.default.createElement(
                             'h2',
-                            null,
+                            { style: { color: "white", fontWeight: "bold" } },
                             'FOE GB Calculator'
                         ),
                         _react2.default.createElement('br', null)
@@ -18563,7 +18564,7 @@ var Calculator = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    null,
+                                    { style: { color: "white", fontWeight: "bold" } },
                                     'Total FP for GB Level'
                                 ),
                                 _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
@@ -18575,7 +18576,7 @@ var Calculator = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    null,
+                                    { style: { color: "white", fontWeight: "bold" } },
                                     'Total FP donated to GB level'
                                 ),
                                 _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
@@ -18587,7 +18588,7 @@ var Calculator = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    null,
+                                    { style: { color: "white", fontWeight: "bold" } },
                                     'Total FP you\'ve donated so far'
                                 ),
                                 _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
@@ -18599,7 +18600,7 @@ var Calculator = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    null,
+                                    { style: { color: "white", fontWeight: "bold" } },
                                     'Total FP donated by person currently in spot if its not you'
                                 ),
                                 _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
@@ -18611,7 +18612,7 @@ var Calculator = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    null,
+                                    { style: { color: "white", fontWeight: "bold" } },
                                     'FP Reward'
                                 ),
                                 _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
@@ -18623,7 +18624,7 @@ var Calculator = function (_React$Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
-                                    null,
+                                    { style: { color: "white", fontWeight: "bold" } },
                                     'ARC Boost'
                                 ),
                                 _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
@@ -18649,21 +18650,21 @@ var Calculator = function (_React$Component) {
                         { className: 'col-md-4 col-lg-4 col-xl-4' },
                         _react2.default.createElement(
                             _reactBootstrap.ControlLabel,
-                            null,
+                            { style: { color: "white", fontWeight: "bold" } },
                             'Total to Lock: ',
                             this.state.output_totalToLock
                         ),
                         _react2.default.createElement('br', null),
                         _react2.default.createElement(
                             _reactBootstrap.ControlLabel,
-                            null,
+                            { style: { color: "white", fontWeight: "bold" } },
                             'Total FP Earned: ',
                             this.state.output_totalFPRewards
                         ),
                         _react2.default.createElement('br', null),
                         _react2.default.createElement(
                             _reactBootstrap.ControlLabel,
-                            null,
+                            { style: { color: "white", fontWeight: "bold" } },
                             'Total Profit: ',
                             this.state.output_totalProfit
                         )
