@@ -18539,7 +18539,7 @@ var Calculator = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         _reactBootstrap.Col,
-                        { lg: 6, lgOffset: 3, style: { textAlign: "center" } },
+                        { lg: 6, lgOffset: 5, style: { textAlign: "center" } },
                         _react2.default.createElement(
                             'h2',
                             { style: { color: "white", fontWeight: "bold" } },
@@ -18553,7 +18553,7 @@ var Calculator = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         _reactBootstrap.Col,
-                        { lg: 6, lgOffset: 3, style: { textAlign: "center" } },
+                        { lg: 6, lgOffset: 5, style: { textAlign: "center" } },
                         _react2.default.createElement(
                             _reactBootstrap.Form,
                             { onSubmit: function onSubmit(event) {
@@ -18644,29 +18644,32 @@ var Calculator = function (_React$Component) {
                 _react2.default.createElement(
                     _reactBootstrap.Row,
                     null,
-                    _react2.default.createElement(_reactBootstrap.Col, { md: 3, lg: 3 }),
                     _react2.default.createElement(
-                        _reactBootstrap.FormGroup,
-                        { className: 'col-md-4 col-lg-4 col-xl-4' },
+                        _reactBootstrap.Col,
+                        { md: 3, lg: 3, lgOffset: 5 },
                         _react2.default.createElement(
-                            _reactBootstrap.ControlLabel,
-                            { style: { color: "white", fontWeight: "bold" } },
-                            'Total to Lock: ',
-                            this.state.output_totalToLock
-                        ),
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement(
-                            _reactBootstrap.ControlLabel,
-                            { style: { color: "white", fontWeight: "bold" } },
-                            'Total FP Earned: ',
-                            this.state.output_totalFPRewards
-                        ),
-                        _react2.default.createElement('br', null),
-                        _react2.default.createElement(
-                            _reactBootstrap.ControlLabel,
-                            { style: { color: "white", fontWeight: "bold" } },
-                            'Total Profit: ',
-                            this.state.output_totalProfit
+                            _reactBootstrap.FormGroup,
+                            { className: 'col-md-4 col-lg-4 col-xl-4' },
+                            _react2.default.createElement(
+                                _reactBootstrap.ControlLabel,
+                                { style: { color: "white", fontWeight: "bold" } },
+                                'Total to Lock: ',
+                                this.state.output_totalToLock
+                            ),
+                            _react2.default.createElement('br', null),
+                            _react2.default.createElement(
+                                _reactBootstrap.ControlLabel,
+                                { style: { color: "white", fontWeight: "bold" } },
+                                'Total FP Earned: ',
+                                this.state.output_totalFPRewards
+                            ),
+                            _react2.default.createElement('br', null),
+                            _react2.default.createElement(
+                                _reactBootstrap.ControlLabel,
+                                { style: { color: "white", fontWeight: "bold" } },
+                                'Total Profit: ',
+                                this.state.output_totalProfit
+                            )
                         )
                     )
                 )
