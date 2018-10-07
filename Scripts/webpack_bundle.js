@@ -18649,13 +18649,13 @@ var Calculator = function (_React$Component) {
                 _react2.default.createElement(
                     _reactBootstrap.Row,
                     null,
-                    _react2.default.createElement(_reactBootstrap.Col, { lg: 5 }),
+                    _react2.default.createElement(_reactBootstrap.Col, { lg: 3 }),
                     _react2.default.createElement(
                         _reactBootstrap.Col,
-                        { lg: 6 },
+                        { lg: 7 },
                         _react2.default.createElement(
                             _reactBootstrap.FormGroup,
-                            { className: 'col-md-4 col-lg-4 col-xl-4', style: { marginLeft: "-10px" } },
+                            { style: { marginLeft: "-100px" } },
                             _react2.default.createElement(
                                 _reactBootstrap.ControlLabel,
                                 { style: { color: "white", fontWeight: "bold" } },
