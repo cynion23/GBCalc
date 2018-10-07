@@ -18534,6 +18534,8 @@ var Calculator = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: 'container' },
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('br', null),
                 _react2.default.createElement(
                     _reactBootstrap.Row,
                     null,
@@ -18552,10 +18554,10 @@ var Calculator = function (_React$Component) {
                 _react2.default.createElement(
                     _reactBootstrap.Row,
                     null,
-                    _react2.default.createElement(_reactBootstrap.Col, { lg: 3 }),
+                    _react2.default.createElement(_reactBootstrap.Col, { lg: 4 }),
                     _react2.default.createElement(
                         _reactBootstrap.Col,
-                        { lg: 6, style: { textAlign: "center" } },
+                        { lg: 4, style: { textAlign: "center" } },
                         _react2.default.createElement(
                             _reactBootstrap.Form,
                             { onSubmit: function onSubmit(event) {
@@ -18603,7 +18605,7 @@ var Calculator = function (_React$Component) {
                                 _react2.default.createElement(
                                     _reactBootstrap.ControlLabel,
                                     { style: { color: "white", fontWeight: "bold" } },
-                                    'Total FP donated by person currently in spot if its not you'
+                                    'Total FP donated by closest person'
                                 ),
                                 _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
                                         return _this2.setState({ totalCurrentSpot: event.target.value });
