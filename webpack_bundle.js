@@ -18510,8 +18510,6 @@ var Calculator = function (_React$Component) {
             totalRemaining += +this.state.totalSelf;
             console.log(totalRemaining);
             totalRemaining += +this.state.totalCurrentSpot;
-            console.log(totalRemaining);
-            console.log("Total FP Required to lock: " + totalRemaining / 2);
 
             var totalToLock = Math.round(totalRemaining / 2);
             var totalProfit = Math.round(+this.state.fpReward * (1 + +this.state.ARCBoost * .01));
@@ -18522,6 +18520,12 @@ var Calculator = function (_React$Component) {
             });
         }
     }, {
+        key: 'onFormSubmitted',
+        value: function onFormSubmitted(event) {
+            event.preventDefault();
+            onClick();
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -18530,11 +18534,11 @@ var Calculator = function (_React$Component) {
                 'div',
                 { className: 'container' },
                 _react2.default.createElement(
-                    'div',
-                    { className: 'row' },
+                    _reactBootstrap.Row,
+                    null,
                     _react2.default.createElement(
-                        'div',
-                        { className: 'col-lg-6 col-lg-offset-3 text-center' },
+                        _reactBootstrap.Col,
+                        { lg: 6, lgOffset: 3, style: { textAlign: "center" } },
                         _react2.default.createElement(
                             'h2',
                             null,
@@ -18544,97 +18548,91 @@ var Calculator = function (_React$Component) {
                     )
                 ),
                 _react2.default.createElement(
-                    'div',
-                    { className: 'row' },
+                    _reactBootstrap.Row,
+                    null,
                     _react2.default.createElement(
-                        'div',
-                        { className: 'col-lg-6 col-lg-offset-3 text-center' },
+                        _reactBootstrap.Col,
+                        { lg: 6, lgOffset: 3, style: { textAlign: "center" } },
                         _react2.default.createElement(
-                            _reactBootstrap.FormGroup,
-                            null,
+                            _reactBootstrap.Form,
+                            { onSubmit: function onSubmit(event) {
+                                    return _this2.onFormSubmitted(event);
+                                } },
                             _react2.default.createElement(
-                                _reactBootstrap.ControlLabel,
+                                _reactBootstrap.FormGroup,
                                 null,
-                                'Total FP for GB Level'
+                                _react2.default.createElement(
+                                    _reactBootstrap.ControlLabel,
+                                    null,
+                                    'Total FP for GB Level'
+                                ),
+                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
+                                        return _this2.setState({ totalFP: event.target.value });
+                                    }, value: this.state.totalFP })
                             ),
-                            _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
-                                    return _this2.setState({ totalFP: event.target.value });
-                                }, value: this.state.totalFP })
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.FormGroup,
-                            null,
                             _react2.default.createElement(
-                                _reactBootstrap.ControlLabel,
+                                _reactBootstrap.FormGroup,
                                 null,
-                                'Total FP donated to GB level'
+                                _react2.default.createElement(
+                                    _reactBootstrap.ControlLabel,
+                                    null,
+                                    'Total FP donated to GB level'
+                                ),
+                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
+                                        return _this2.setState({ totalDonatedOverall: event.target.value });
+                                    }, value: this.state.totalDonatedOverall })
                             ),
-                            _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
-                                    return _this2.setState({ totalDonatedOverall: event.target.value });
-                                }, value: this.state.totalDonatedOverall })
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.FormGroup,
-                            null,
                             _react2.default.createElement(
-                                _reactBootstrap.ControlLabel,
+                                _reactBootstrap.FormGroup,
                                 null,
-                                'Total FP you\'ve donated so far'
+                                _react2.default.createElement(
+                                    _reactBootstrap.ControlLabel,
+                                    null,
+                                    'Total FP you\'ve donated so far'
+                                ),
+                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
+                                        return _this2.setState({ totalSelf: event.target.value });
+                                    }, value: this.state.totalSelf })
                             ),
-                            _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
-                                    return _this2.setState({ totalSelf: event.target.value });
-                                }, value: this.state.totalSelf })
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.FormGroup,
-                            null,
                             _react2.default.createElement(
-                                _reactBootstrap.ControlLabel,
+                                _reactBootstrap.FormGroup,
                                 null,
-                                'Total FP donated by person currently in spot if its not you'
+                                _react2.default.createElement(
+                                    _reactBootstrap.ControlLabel,
+                                    null,
+                                    'Total FP donated by person currently in spot if its not you'
+                                ),
+                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
+                                        return _this2.setState({ totalCurrentSpot: event.target.value });
+                                    }, value: this.state.totalCurrentSpot })
                             ),
-                            _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
-                                    return _this2.setState({ totalCurrentSpot: event.target.value });
-                                }, value: this.state.totalCurrentSpot })
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.FormGroup,
-                            null,
                             _react2.default.createElement(
-                                _reactBootstrap.ControlLabel,
+                                _reactBootstrap.FormGroup,
                                 null,
-                                'FP Reward'
+                                _react2.default.createElement(
+                                    _reactBootstrap.ControlLabel,
+                                    null,
+                                    'FP Reward'
+                                ),
+                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
+                                        return _this2.setState({ fpReward: event.target.value });
+                                    }, value: this.state.fpReward })
                             ),
-                            _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
-                                    return _this2.setState({ fpReward: event.target.value });
-                                }, value: this.state.fpReward })
-                        ),
-                        _react2.default.createElement(
-                            _reactBootstrap.FormGroup,
-                            null,
                             _react2.default.createElement(
-                                _reactBootstrap.ControlLabel,
+                                _reactBootstrap.FormGroup,
                                 null,
-                                'ARC Boost'
+                                _react2.default.createElement(
+                                    _reactBootstrap.ControlLabel,
+                                    null,
+                                    'ARC Boost'
+                                ),
+                                _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
+                                        return _this2.setState({ ARCBoost: event.target.value });
+                                    }, value: this.state.ARCBoost })
                             ),
-                            _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
-                                    return _this2.setState({ ARCBoost: event.target.value });
-                                }, value: this.state.ARCBoost })
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'row' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'text-center' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'btn-group', 'data-toggle': 'buttons' },
                             _react2.default.createElement(
                                 _reactBootstrap.Button,
-                                { type: 'submit', onClick: function onClick() {
+                                { type: 'submit', onSubmit: function onSubmit() {
                                         return _this2.onClick();
                                     } },
                                 'Submit'
@@ -18643,9 +18641,9 @@ var Calculator = function (_React$Component) {
                     )
                 ),
                 _react2.default.createElement(
-                    'div',
-                    { className: 'row' },
-                    _react2.default.createElement('div', { className: 'col-md-3 col-lg-3 col-xl-3' }),
+                    _reactBootstrap.Row,
+                    null,
+                    _react2.default.createElement(_reactBootstrap.Col, { md: 3, lg: 3 }),
                     _react2.default.createElement(
                         _reactBootstrap.FormGroup,
                         { className: 'col-md-4 col-lg-4 col-xl-4' },
