@@ -18637,7 +18637,7 @@ var Calculator = function (_React$Component) {
                             ),
                             _react2.default.createElement(
                                 _reactBootstrap.Button,
-                                { type: 'submit', onSubmit: function onSubmit() {
+                                { bsStyle: 'primary', type: 'submit', onSubmit: function onSubmit() {
                                         return _this2.onClick();
                                     } },
                                 'Calculate'
