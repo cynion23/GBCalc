@@ -18640,7 +18640,7 @@ var Calculator = function (_React$Component) {
                                 { type: 'submit', onSubmit: function onSubmit() {
                                         return _this2.onClick();
                                     } },
-                                'Submit'
+                                'Calculate'
                             )
                         )
                     )
