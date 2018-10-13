@@ -18494,42 +18494,54 @@ var Calculator = function (_React$Component) {
             totalSelf: 0,
             totalCurrentSpot: 0,
             fpReward: 0,
-            ARCBoost: 90,
-            output_totalToLock: 0,
-            output_totalFPRewards: 0,
-            output_totalProfit: 0
+            ARCBoost: 90
+            //output_totalToLock: 0,
+            //output_totalFPRewards: 0,
+            //output_totalProfit: 0
         };
         return _this;
     }
+    //onClick() {
+    //    var totalRemaining = this.state.totalFP - this.state.totalDonatedOverall;
+    //    console.log(totalRemaining);
+    //    totalRemaining += (+this.state.totalSelf);
+    //    console.log(totalRemaining);
+    //    totalRemaining += (+this.state.totalCurrentSpot);
+
+    //    var totalToLock = Math.round(totalRemaining / 2);
+    //    var totalProfit = Math.round((+this.state.fpReward * (1 + ((+this.state.ARCBoost) * .01))));
+    //    this.setState(
+    //        {
+    //            output_totalToLock: totalToLock,
+    //            output_totalFPRewards: totalProfit,
+    //            output_totalProfit: totalProfit - totalToLock
+    //        })
+    //}
+    //onFormSubmitted(event) {
+    //    debugger;
+    //    event.preventDefault();
+    //    this.onClick();
+    //}
+
 
     _createClass(Calculator, [{
-        key: 'onClick',
-        value: function onClick() {
-            var totalRemaining = this.state.totalFP - this.state.totalDonatedOverall;
-            console.log(totalRemaining);
-            totalRemaining += +this.state.totalSelf;
-            console.log(totalRemaining);
-            totalRemaining += +this.state.totalCurrentSpot;
-
-            var totalToLock = Math.round(totalRemaining / 2);
-            var totalProfit = Math.round(+this.state.fpReward * (1 + +this.state.ARCBoost * .01));
-            this.setState({
-                output_totalToLock: totalToLock,
-                output_totalFPRewards: totalProfit,
-                output_totalProfit: totalProfit - totalToLock
-            });
-        }
-    }, {
-        key: 'onFormSubmitted',
-        value: function onFormSubmitted(event) {
-            debugger;
-            event.preventDefault();
-            this.onClick();
-        }
-    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
+
+            var totalRemaining = this.state.totalFP - this.state.totalDonatedOverall;
+            totalRemaining += +this.state.totalSelf;
+            totalRemaining += +this.state.totalCurrentSpot;
+
+            var totalToLock = Math.round(totalRemaining / 2);
+            var totalRewards = Math.round(+this.state.fpReward * (1 + +this.state.ARCBoost * .01));
+            var totalProfit = totalRewards - totalToLock;
+            var arrow = "";
+            if (totalProfit >= 0) {
+                arrow = "./Scripts/arrowupgreen.png";
+            } else if (totalProfit < 0) {
+                arrow = "./Scripts/arrowdownred.png";
+            }
 
             return _react2.default.createElement(
                 'div',
@@ -18560,9 +18572,7 @@ var Calculator = function (_React$Component) {
                         { lg: 4, style: { textAlign: "center" } },
                         _react2.default.createElement(
                             _reactBootstrap.Form,
-                            { onSubmit: function onSubmit(event) {
-                                    return _this2.onFormSubmitted(event);
-                                } },
+                            null,
                             _react2.default.createElement(
                                 _reactBootstrap.FormGroup,
                                 null,
@@ -18634,13 +18644,6 @@ var Calculator = function (_React$Component) {
                                 _react2.default.createElement(_reactBootstrap.FormControl, { type: 'number', onChange: function onChange(event) {
                                         return _this2.setState({ ARCBoost: event.target.value });
                                     }, value: this.state.ARCBoost })
-                            ),
-                            _react2.default.createElement(
-                                _reactBootstrap.Button,
-                                { bsStyle: 'primary', type: 'submit', onSubmit: function onSubmit() {
-                                        return _this2.onClick();
-                                    } },
-                                'Calculate'
                             )
                         )
                     )
@@ -18658,23 +18661,24 @@ var Calculator = function (_React$Component) {
                             { style: { marginLeft: "-100px" } },
                             _react2.default.createElement(
                                 _reactBootstrap.ControlLabel,
-                                { style: { color: "white", fontWeight: "bold" } },
+                                { style: { fontSize: "1.2rem", color: "white", fontWeight: "bold" } },
                                 'Total to Lock: ',
-                                this.state.output_totalToLock
+                                totalToLock
                             ),
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(
                                 _reactBootstrap.ControlLabel,
-                                { style: { color: "white", fontWeight: "bold" } },
+                                { style: { fontSize: "1.2rem", color: "white", fontWeight: "bold" } },
                                 'Total FP Earned: ',
-                                this.state.output_totalFPRewards
+                                totalRewards
                             ),
                             _react2.default.createElement('br', null),
                             _react2.default.createElement(
                                 _reactBootstrap.ControlLabel,
-                                { style: { color: "white", fontWeight: "bold" } },
+                                { style: { fontSize: "1.2rem", color: "white", fontWeight: "bold" } },
                                 'Total Profit: ',
-                                this.state.output_totalProfit
+                                totalProfit,
+                                _react2.default.createElement('img', { style: { marginTop: "-3px", marginLeft: "7px" }, width: '16px', height: '16px', src: arrow })
                             )
                         )
                     )
